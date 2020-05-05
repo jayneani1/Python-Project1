@@ -6,3 +6,6 @@ class InstaPost(models.Model):
     image = models.ImageField(blank=True, null=True)
     caption = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.caption
