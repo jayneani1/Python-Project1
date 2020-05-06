@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from .models import InstaPost
-from django.views.generic import (
-    ListView
-)
+from django.views.generic import ListView
 from rest_framework import generics
 from rest_framework import viewsets
 from rest_framework.exceptions import (
@@ -13,10 +11,11 @@ from .serializers import (
 )
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
+
 class InstaListView(ListView):
-    template_name = 'insta_post_list.html'
-    queryset = InstaPost.objects.all
-    context_object_name = 'post'
+    template_name = "insta post list view"
+    queryset = InstaPost.objects.all()
+    context_object_name = 'posts'
 
 class InstaViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
